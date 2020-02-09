@@ -1,0 +1,10 @@
+[user]
+	email = chavulapenjani@gmail.com
+	name = Penjani Chavula
+[alias]
+	co = checkout
+	br = branch
+	st = status
+	ci = commit
+	cam = commit -am
+	lo = log --oneline
