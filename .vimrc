@@ -14,12 +14,13 @@ Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
 Plug 'airblade/vim-gitgutter'
 "Plug 'itchyny/lightline.vim'
+Plug 'scrooloose/syntastic'
+Plug 'ctrlpvim/ctrlp.vim'
 
 "# Initialize plugin system
 call plug#end()
 
 "# Make sure to reload .vimrc and :PlugInstall to install plugins
-
 
 " NERDTree config
 map <C-b> :NERDTreeToggle<CR>
