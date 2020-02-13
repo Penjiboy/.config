@@ -76,8 +76,11 @@ nnoremap <CR> <Nop>
 
 " You complete me config
 map <leader>g :YcmCompleter GoToDefinitionElseDeclaration<CR>
+" TODO: Fix this!
+"map <leader>gd :YcmCompleter GetDoc
+nnoremap <C-q> :YcmCompleter GetDoc<CR>
 
-nnoremap <SPACE> <Nop>
+"nnoremap <SPACE> <Nop>
 "let mapleader=" "
 let mapleader = "\<Space>"
 "let mapleader = ","
