@@ -20,6 +20,9 @@ Plug 'yegappan/mru'
 " Might need to remove ale or ycm if they conflict
 Plug 'dense-analysis/ale'
 Plug 'terryma/vim-multiple-cursors'
+Plug 'qpkorr/vim-bufkill'
+"Plug 'xolox/vim-misc'
+"Plug 'xolox/vim-session'
 
 "# Initialize plugin system
 call plug#end()
@@ -28,6 +31,10 @@ call plug#end()
 
 " Make leaderboard last longer
 set timeoutlen=2000
+
+" Bracket completion
+inoremap { {<CR>}<Esc>ko
+inoremap ( ()<Esc>i
 
 "Split navigations
 "	Explanation: The `no` part means remap the key in normal mode as
@@ -47,6 +54,22 @@ au BufNewFile, BufRead *.py
 	\ set expandtab
 	\ set autoindent
 	\ set fileformat=unix
+
+" C formatting
+au BufNewFile, BufRead *.c, *.h, *.cpp
+	\ set tabstop=4
+	\ set softtabstop=4
+	\ set shiftwidth=4
+	\ set textwidth=79
+	\ set expandtab
+	\ set autoindent
+	\ set fileformat=unix
+
+" Bufkill config
+map <C-c> :BD<cr>
+
+"" vim-session config
+"let g:session_autosave = 'no'
 
 " Multi-cursor config
 let g:multi_cursor_use_default_mapping=0
