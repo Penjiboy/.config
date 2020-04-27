@@ -23,6 +23,13 @@ Plug 'terryma/vim-multiple-cursors'
 Plug 'qpkorr/vim-bufkill'
 "Plug 'xolox/vim-misc'
 "Plug 'xolox/vim-session'
+"Plug 'xolox/vim-easytags'
+Plug 'ludovicchabant/vim-gutentags'
+Plug 'majutsushi/tagbar'
+Plug 'tpope/vim-dispatch'
+Plug 'udalov/kotlin-vim'
+Plug 'artur-shaik/vim-javacomplete2'
+Plug 'airblade/vim-rooter'
 
 "# Initialize plugin system
 call plug#end()
@@ -32,9 +39,23 @@ call plug#end()
 " Make leaderboard last longer
 set timeoutlen=2000
 
+" Enable mouse
+set mouse=a
+
 " Bracket completion
-inoremap { {<CR>}<Esc>ko
+"inoremap { {<CR>}<Esc>ko
+inoremap {<CR> {<CR>}<Esc>ko
 inoremap ( ()<Esc>i
+
+" Vim Rooter config
+let g:rooter_resolve_links = 1
+
+" Toggle TagBar
+nnoremap t :TagbarToggle<CR>
+
+" Easy tags config
+"let g:easytags_async = 1
+"let g:easytags_file = '~/.vim/tags'
 
 "Split navigations
 "	Explanation: The `no` part means remap the key in normal mode as
@@ -44,6 +65,8 @@ nnoremap <C-J> <C-W><C-J>
 nnoremap <C-K> <C-W><C-K>
 nnoremap <C-L> <C-W><C-L>
 nnoremap <C-H> <C-W><C-H>
+
+" Horizontal scrolling.. need to figure out how we want to do this
 
 " Python formatting
 au BufNewFile, BufRead *.py
@@ -69,6 +92,10 @@ filetype plugin indent on
 set tabstop=4
 set shiftwidth=4
 set expandtab
+
+" Java completer config
+autocmd FileType java setlocal omnifunc=javacomplete#Complete
+let g:JavaComplete_EnableDefaultMappings = 0
 
 " Bufkill config
 map <C-c> :BD<cr>
@@ -116,6 +143,9 @@ set nu
 
 " In order to be able to see leader key activation
 set showcmd
+
+" Text wrapping
+set nowrap
 
 " Instant Markdown Plugin config
 filetype plugin on
