@@ -18,7 +18,7 @@ Plug 'scrooloose/syntastic'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'yegappan/mru'
 " Might need to remove ale or ycm if they conflict
-Plug 'dense-analysis/ale'
+"Plug 'dense-analysis/ale'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'qpkorr/vim-bufkill'
 "Plug 'xolox/vim-misc'
