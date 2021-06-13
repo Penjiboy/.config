@@ -30,11 +30,18 @@ Plug 'tpope/vim-dispatch'
 Plug 'udalov/kotlin-vim'
 Plug 'artur-shaik/vim-javacomplete2'
 Plug 'airblade/vim-rooter'
+Plug 'rust-lang/rust.vim'
 
 "# Initialize plugin system
 call plug#end()
 
 "# Make sure to reload .vimrc and :PlugInstall to install plugins
+
+syntax enable
+filetype plugin indent on
+
+" Enable Rust auto formating
+let g:rustfmt_autosave = 1
 
 " Make leaderboard last longer
 set timeoutlen=2000
