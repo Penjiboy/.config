@@ -10,3 +10,6 @@ function copyclip() {
     fi
 }
 
+function convert_all_wav_to_mp3() {
+    for i in *.wav; do ffmpeg -i "$i" "${i%.*}.mp3"; done
+}

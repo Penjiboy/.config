@@ -7,8 +7,8 @@ call plug#begin('~/.vim/plugged')
 "## Plug 'https://github.com/junegunn/vin-github-dashboard.git'
 "## Plug '~/my-prototype-plugin'
 
-Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
-Plug 'valloric/youcompleteme'
+"Plug 'suan/vim-instant-markdown', {'for': 'markdown'}
+"Plug 'valloric/youcompleteme'
 Plug 'elzr/vim-json'
 Plug 'preservim/nerdtree'
 Plug 'preservim/nerdcommenter'
