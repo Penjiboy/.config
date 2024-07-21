@@ -12,3 +12,6 @@ vim.opt.incsearch = true
 
 vim.opt.scrolloff = 8
 vim.opt.updatetime = 50
+
+-- Disable LazyVim auto format
+vim.g.autoformat = false

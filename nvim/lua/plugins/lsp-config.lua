@@ -11,6 +11,7 @@ return {
     },
     config = function()
       local lsp_zero = require("lsp-zero")
+      lsp_zero.extend_lspconfig();
 
       lsp_zero.on_attach(function(client, bufnr)
         -- see :help lsp-zero-keybindings to learn the available actions
@@ -29,6 +30,8 @@ return {
           "sourcekit",     -- not sure if this is necessary
           "clangd",        -- prefer ccls for now
           -- "ccls",          -- prefer clangd for now
+          "marksman",      -- no LS for markdown
+          "ltex",          -- no LS for markdown
         },
         -- Alternatively specify preferred servers for a filetype (others will be ignored).
         -- preferred_servers = {

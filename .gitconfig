@@ -8,3 +8,11 @@
 	ci = commit
 	cam = commit -am
 	lo = log --oneline
+    lg = log --color --graph --pretty=format:'%Cred%h%Creset -%C(yellow)%d%Creset %s %Cgreen(%cr) %C(bold blue)><%an>%Creset'
+    cf = commit -a --fixup
+    ri = rebase -i --autosquash
+    mr = !sh -c 'git fetch $1 merge-requests/$2/head:mr-$1-$2 && git checkout mr-$1-$2' -
+    # to use, run `git mr origin <mr-number>`
+
+[core]
+    editor = vim
