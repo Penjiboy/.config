@@ -1,5 +1,6 @@
 alias rmrf='rm -rf'
 alias pwdcp="pwd | tr -d '\n' | xclip -sel clip"
+alias lg=lazygit
 
 function copyclip() {
     if [[ "$1" == "-d" ]]; then
