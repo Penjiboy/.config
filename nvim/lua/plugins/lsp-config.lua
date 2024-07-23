@@ -32,6 +32,7 @@ return {
           -- "ccls",          -- prefer clangd for now
           "marksman",      -- no LS for markdown
           "ltex",          -- no LS for markdown
+          "tsserver",     -- prefer vtsls
         },
         -- Alternatively specify preferred servers for a filetype (others will be ignored).
         -- preferred_servers = {
