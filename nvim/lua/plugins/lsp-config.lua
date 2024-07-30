@@ -33,6 +33,7 @@ return {
           "marksman",      -- no LS for markdown
           "ltex",          -- no LS for markdown
           "tsserver",     -- prefer vtsls
+          -- "vtsls",          -- prefer tsserver
         },
         -- Alternatively specify preferred servers for a filetype (others will be ignored).
         -- preferred_servers = {
@@ -42,6 +43,32 @@ return {
         prefer_local = false, -- Prefer locally installed servers over nix-shell
       })
     end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      -- make sure mason installs the server
+      servers = {
+        tsserver = {
+          enabled = false
+        },
+        vtsls = {
+          enabled = true,
+          settings = {
+            typescript = {
+              inlayHints = {
+                enumMemberValues = { enabled = false },
+                functionLikeReturnTypes = { enabled = false },
+                parameterNames = { enabled = "literals" },
+                parameterTypes = { enabled = false },
+                propertyDeclarationTypes = { enabled = false },
+                variableTypes = { enabled = false },
+              }
+            }
+          }
+        }
+      }
+    }
   },
   { "mason-lspconfig.nvim", enabled = false },
   { "mason.nvim",           enabled = false },
