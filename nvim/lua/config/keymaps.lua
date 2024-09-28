@@ -26,3 +26,28 @@ vim.keymap.set("n", "Q", "<nop>")
 -- Diagnostics
 -- vim.keymap.set("n", "<leader>xh", function() vim.diagnostic.hide() end)
 -- vim.keymap.set("n", "<leader>xs", function() vim.diagnostic.show() end)
+
+-- Git script to show log at lines
+vim.keymap.set("v", "<leader>gl", function()
+    vim.print('git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L')
+    vim.cmd(
+        'term git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L'
+            .. vim.fn.line("v")
+            .. ","
+            .. vim.fn.line(".")
+            .. ":"
+            .. vim.fn.expand("%:p")
+    )
+end, {})
+
+vim.keymap.set("n", "<leader>gl", function()
+    vim.print('term git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L')
+    vim.cmd(
+        'git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L'
+            .. math.max(1, vim.fn.line(".") - 1)
+            .. ","
+            .. vim.fn.line(".") + 1
+            .. ":"
+            .. vim.fn.expand("%:p")
+    )
+end, {})
