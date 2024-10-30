@@ -53,7 +53,7 @@ return {
           enabled = false
         },
         vtsls = {
-          enabled = true,
+          enabled = false,
           settings = {
             typescript = {
               inlayHints = {
@@ -66,6 +66,9 @@ return {
               }
             }
           }
+        },
+        angularls = {
+          enabled = true
         }
       }
     }
