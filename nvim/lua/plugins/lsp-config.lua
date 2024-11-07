@@ -21,27 +21,55 @@ return {
         })
       end)
 
-      require("lazy-lsp").setup({
-        -- By default all available servers are set up. Exclude unwanted or misbehaving servers.
-        excluded_servers = {
-          "denols",        -- prefer eslint and tssserver
-          "quick_lint_js", -- prefer eslint and tssserver
-          "tailwindcss",   -- associates with too many filetypes
-          "sourcekit",     -- not sure if this is necessary
-          "clangd",        -- prefer ccls for now
-          -- "ccls",          -- prefer clangd for now
-          "marksman",      -- no LS for markdown
-          "ltex",          -- no LS for markdown
-          "tsserver",     -- prefer vtsls
-        },
-        -- Alternatively specify preferred servers for a filetype (others will be ignored).
-        -- preferred_servers = {
-        --   markdown = {},
-        --   python = { "pyright", "ruff_lsp" },
-        -- },
-        prefer_local = false, -- Prefer locally installed servers over nix-shell
-      })
+    --   require("lazy-lsp").setup({
+    --     -- By default all available servers are set up. Exclude unwanted or misbehaving servers.
+    --     excluded_servers = {
+    --       "denols",        -- prefer eslint and tssserver
+    --       "quick_lint_js", -- prefer eslint and tssserver
+    --       "tailwindcss",   -- associates with too many filetypes
+    --       "sourcekit",     -- not sure if this is necessary
+    --       "clangd",        -- prefer ccls for now
+    --       -- "ccls",          -- prefer clangd for now
+    --       "marksman",      -- no LS for markdown
+    --       "ltex",          -- no LS for markdown
+    --       "tsserver",     -- prefer vtsls
+    --       -- "vtsls",          -- prefer tsserver
+    --     },
+    --
+    --     -- Alternatively specify preferred servers for a filetype (others will be ignored).
+    --     -- preferred_servers = {
+    --     --   markdown = {},
+    --     --   python = { "pyright", "ruff_lsp" },
+    --     -- },
+    --     prefer_local = false, -- Prefer locally installed servers over nix-shell
+    --   })
     end,
+  },
+  {
+    "neovim/nvim-lspconfig",
+    opts = {
+      -- make sure mason installs the server
+      servers = {
+        tsserver = {
+          enabled = false
+        },
+        vtsls = {
+          enabled = true,
+          -- settings = {
+          --   typescript = {
+          --     inlayHints = {
+          --       enumMemberValues = { enabled = false },
+          --       functionLikeReturnTypes = { enabled = false },
+          --       parameterNames = { enabled = "literals" },
+          --       parameterTypes = { enabled = false },
+          --       propertyDeclarationTypes = { enabled = false },
+          --       variableTypes = { enabled = false },
+          --     }
+          --   }
+          -- }
+        }
+      }
+    }
   },
   { "mason-lspconfig.nvim", enabled = false },
   { "mason.nvim",           enabled = false },
