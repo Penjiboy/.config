@@ -29,21 +29,25 @@ vim.keymap.set("n", "Q", "<nop>")
 
 -- Git script to show log at lines
 vim.keymap.set("v", "<leader>gl", function()
-    vim.print('git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L')
+    local cur_file_path = vim.fn.expand("%:p")
+    local command = vim.fn.escape('term git log --pretty="tformat:%n%n**(%cs) %Cblue%h%Creset %s" -L', '%')
+    -- vim.cmd.vsplit();
+
     vim.cmd(
-        'term git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L'
+        command
             .. vim.fn.line("v")
             .. ","
-            .. vim.fn.line(".")
+            ..vim.fn.line(".")
             .. ":"
-            .. vim.fn.expand("%:p")
+            .. cur_file_path
     )
 end, {})
 
 vim.keymap.set("n", "<leader>gl", function()
-    vim.print('term git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L')
+    local command = vim.fn.escape('term git log --pretty="tformat:%n%n**(%cs) %Cblue%h%Creset %s" -L', '%')
+
     vim.cmd(
-        'git log --pretty="tformat: %n%Cred%h%Creset %Cgreen%s%Creset" -L'
+        command
             .. math.max(1, vim.fn.line(".") - 1)
             .. ","
             .. vim.fn.line(".") + 1
