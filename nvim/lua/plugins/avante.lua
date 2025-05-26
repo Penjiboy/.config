@@ -12,6 +12,7 @@ return {
       },
       ollama = {
         model = "gemma3:1b",
+        -- model = "deepseek-coder:1.3b",
       }
     },
     -- if you want to build from source then do `make BUILD_FROM_SOURCE=true`
