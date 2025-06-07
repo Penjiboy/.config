@@ -1,3 +1,6 @@
+if true then return {} end
+
+--- ignore this for now
 return {
   {
     "yetone/avante.nvim",
