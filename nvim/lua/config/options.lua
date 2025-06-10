@@ -15,3 +15,6 @@ vim.opt.updatetime = 50
 
 -- Disable LazyVim auto format
 vim.g.autoformat = false
+
+-- auto-session related config
+vim.o.sessionoptions="blank,buffers,curdir,folds,help,tabpages,winsize,winpos,terminal,localoptions"
