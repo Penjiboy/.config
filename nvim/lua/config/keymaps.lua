@@ -114,3 +114,8 @@ vim.keymap.set("n", "<A-.>", open_next_file)
 -- Open Gen prompt
 vim.keymap.set({ 'n', 'v' }, '<leader>]', ':Gen<CR>')
 vim.keymap.set({ 'n' }, '<leader>[', function() require('gen').select_model() end, {})
+
+-- arrow.nvim
+vim.keymap.set("n", "H", require("arrow.persist").previous)
+vim.keymap.set("n", "L", require("arrow.persist").next)
+vim.keymap.set("n", "<C-s>", require("arrow.persist").toggle)
