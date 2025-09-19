@@ -32,15 +32,17 @@ return {
           -- "ccls",          -- prefer clangd for now
           "marksman",      -- no LS for markdown
           "ltex",          -- no LS for markdown
-          "tsserver",     -- prefer vtsls
-          -- "vtsls",          -- prefer tsserver
+          -- "tsserver",     -- prefer vtsls
+          "vtsls",          -- prefer tsserver
+          -- "eslint",
+          "angularls"
         },
         -- Alternatively specify preferred servers for a filetype (others will be ignored).
         -- preferred_servers = {
         --   markdown = {},
         --   python = { "pyright", "ruff_lsp" },
         -- },
-        prefer_local = false, -- Prefer locally installed servers over nix-shell
+        prefer_local = true, -- Prefer locally installed servers over nix-shell
       })
     end,
   },
