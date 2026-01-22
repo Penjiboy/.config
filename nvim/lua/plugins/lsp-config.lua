@@ -3,6 +3,7 @@
 return {
   {
     "dundalek/lazy-lsp.nvim",
+    enabled = false,
     dependencies = {
       "neovim/nvim-lspconfig",
       { "VonHeikemen/lsp-zero.nvim", branch = "v3.x" },
@@ -55,7 +56,7 @@ return {
           enabled = false
         },
         vtsls = {
-          enabled = false,
+          enabled = true,
           settings = {
             typescript = {
               inlayHints = {
@@ -70,13 +71,13 @@ return {
           }
         },
         angularls = {
-          enabled = true
+          enabled = false
         }
       }
     }
   },
-  { "mason-lspconfig.nvim", enabled = false },
-  { "mason.nvim",           enabled = false },
+  { "mason-lspconfig.nvim" },
+  { "mason.nvim" },
 }
 
 -- return {
