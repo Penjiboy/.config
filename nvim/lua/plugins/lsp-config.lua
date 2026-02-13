@@ -76,8 +76,8 @@ return {
       }
     }
   },
-  { "mason-lspconfig.nvim" },
-  { "mason.nvim" },
+  { "mason-org/mason-lspconfig.nvim" },
+  { "mason-org/mason.nvim" },
 }
 
 -- return {
