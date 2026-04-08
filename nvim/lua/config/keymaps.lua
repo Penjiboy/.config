@@ -123,3 +123,5 @@ vim.keymap.set("n", "<A-h>", require("arrow.commands").commands.prev_buffer_book
 vim.keymap.set("n", "<A-l>", require("arrow.commands").commands.next_buffer_bookmark)
 vim.keymap.set("n", "<A-m>", require("arrow.commands").commands.toggle_current_line_for_buffer)
 vim.api.nvim_del_keymap('n', '<Enter>')
+
+vim.keymap.set("n", "<leader>sb", function() Snacks.picker.lines({ layout = { preset = "vertical" } }) end, { desc = "Buffer" })
